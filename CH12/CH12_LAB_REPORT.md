@@ -91,13 +91,13 @@ More data points will improve the model's accuracy in making predictions since t
 More specific information on each of the currently tracked features could be very helpful, such as tracking the specific temperature each day, the actual day of the week, or which specific holiday it is. 
 
 **KNN is sometimes called a "lazy learning" algorithm because it does almost no work during training. What is the tradeoff at prediction time?**
-[Your explanation — slower predictions, must compare against every training point]
+KNN has a slower prediction time than many machine learning models, since it must compute the distance to each datapoint for every prediction. This means that it does not scale well for larger datasets; as the dataset grows, both the time and computational resources needed also increase.
 
 **The autograder expects a prediction of approximately 70.5 loaves for today's conditions. Manually look at the dataset and identify which 4 historical days you think the model is averaging. Do their loaf counts average to 70.5?**
-[Your analysis]
+The four historical days that are likely averaged to predict 70.5 loaves are days 3, 14, 18, and 19 on which 72, 70, 70, and 75 loaves are predicted, respectively. These are the days that have the closest conditions to the inputted conditions for today; the average loaf count comes out to 71.75.
 
 **Why might a bakery prefer a slightly inaccurate ML prediction over a human guess for daily loaf counts?**
-[Your explanation — consistency, scalability, data-driven decisions, reduced waste]
+Automated predictions saves time and effort for bakey staff, resulting in more efficient operations. It is also generally more consistent and objective than human decision-making, which will again lead to better efficiency and less waste. 
 
 **If the bakery wanted to MINIMIZE waste (unsold loaves) rather than just predict accurately, how might you change the approach?**
-[Your explanation — e.g., predict slightly under, use a different loss function, factor in cost of waste vs. lost sales]
+You could predict slightly lower than the expected demand in order to reduce unsold loaves, incorporate loss functions that penalize overproduction more than underproduction, or include a "safety stock" approach, predicting slightly less and adjusting for on-the-day demand surges with rapid baking (if feasible).
